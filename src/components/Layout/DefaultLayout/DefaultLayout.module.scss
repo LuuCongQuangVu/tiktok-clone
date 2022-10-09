@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  margin: auto;
+  width: var(--default-layout-width);
+  background-color: green;
+  display: flex;
+}
