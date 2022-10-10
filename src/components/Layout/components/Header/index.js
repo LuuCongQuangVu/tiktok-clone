@@ -15,13 +15,24 @@ function Header() {
         </div>
         <div className={clsx('search')}>
           <div className={clsx('search-inner')}>
-            <input type="search" placeholder="Tìm kiếm tài khoản hoặc video" className={clsx('search-input')} />
+            <div>
+              <input type="text" placeholder="Search accounts and video" className={clsx('search-input')} />
+            </div>
             <button className={clsx('search-btn')}>
               <i className="fa-solid fa-magnifying-glass"></i>
             </button>
           </div>
         </div>
-        <div className={clsx('action')}></div>
+        <div className={clsx('actions')}>
+          <button className={clsx('action-upload')}>
+            <span className={clsx('mr-8')}>
+              <i className="fa-solid fa-plus"></i>
+            </span>
+            Upload
+          </button>
+          <button className={clsx('action-login')}>Log in</button>
+          <div className={clsx('action-more')}></div>
+        </div>
       </div>
     </header>
   );

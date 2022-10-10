@@ -34,7 +34,12 @@
       outline: unset;
       background: unset;
       font-size: 16px;
+      width: 300px;
       margin-right: 8px;
+
+      &:not(:placeholder-shown) ~ .search-btn {
+        background-color: #f0f0f0;
+      }
     }
 
     .search-btn {
@@ -44,10 +49,37 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-
-      i {
+      width: i {
         font-size: 16px;
+        color: var(--black);
       }
     }
+  }
+}
+
+.actions {
+  .action-upload {
+    height: 36px;
+    padding: 0px 16px;
+    font-size: 16px;
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    line-height: 24px;
+    font-weight: 600;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: rgba(22, 24, 35, 0.03);
+    }
+  }
+
+  .action-login {
+    background-color: var(--primary);
+    height: 36px;
+    min-width: 100px;
+    margin-left: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    border-radius: 4px;
   }
 }
