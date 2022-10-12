@@ -1,0 +1,3 @@
+const defaultFn = () => {};
+
+export { defaultFn };

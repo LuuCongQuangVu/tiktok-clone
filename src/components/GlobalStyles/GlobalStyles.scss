@@ -1,15 +1,17 @@
 @import 'normalize.css';
 @import './TemplateStyles.scss';
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+@import 'tippy.js/dist/tippy.css';
 
 :root {
   --primary: rgba(254, 44, 85, 1);
+  --black: #000;
+  --white: #fff;
 
   // Default layout
 
   --default-layout-header-height: 60px;
   --default-layout-width: 1150px;
-  --black: #000;
 }
 
 * {
