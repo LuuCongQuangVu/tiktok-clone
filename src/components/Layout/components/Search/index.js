@@ -1,12 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
-import axios from 'axios';
 
 import styles from './Search.module.scss';
 import AccountItem from '~/components/AccountItem';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { useDebounce } from '~/hooks';
+import { getRequest } from '~/utils';
+import { search } from '~/apiServices/searchService';
 
 const clsx = classNames.bind(styles);
 
@@ -18,12 +19,12 @@ function Search() {
   const debounced = useDebounce(searchValue, 500);
 
   useEffect(() => {
+    async function searchApi() {
+      const response = await search(debounced);
+      setSearchResult(response);
+    }
     if (debounced.trim()) {
-      axios(`https://tiktok.fullstack.edu.vn/api/users/search`, { params: { q: debounced, type: 'less' } })
-        .then((res) => {
-          setSearchResult(res.data.data);
-        })
-        .catch((error) => console.log(error));
+      searchApi();
     } else {
       setSearchResult([]);
       return;

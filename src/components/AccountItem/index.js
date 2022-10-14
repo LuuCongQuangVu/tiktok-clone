@@ -1,5 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
+
 import styles from './AccountItem.module.scss';
 import Avatar from '~/components/Avatar';
 
@@ -7,7 +9,7 @@ const clsx = classNames.bind(styles);
 
 function AccountItem({ data }) {
   return (
-    <div className={clsx('wrapper')}>
+    <Link to={`/@${data?.username}`} className={clsx('wrapper')}>
       <Avatar
         size={40}
         src={
@@ -26,7 +28,7 @@ function AccountItem({ data }) {
         </p>
         <span className={clsx('username')}>{data?.username}</span>
       </div>
-    </div>
+    </Link>
   );
 }
 
