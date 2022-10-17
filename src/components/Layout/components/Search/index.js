@@ -6,7 +6,6 @@ import styles from './Search.module.scss';
 import AccountItem from '~/components/AccountItem';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { useDebounce } from '~/hooks';
-import { getRequest } from '~/utils';
 import { search } from '~/apiServices/searchService';
 
 const clsx = classNames.bind(styles);
@@ -31,6 +30,12 @@ function Search() {
     }
   }, [debounced]);
 
+  const handleChangeInputSearch = (e) => {
+    const searchValue = e.target.value;
+    if (searchValue.startsWith(' ')) return;
+    setSearchValue(searchValue);
+  };
+  const handleSearchSubmit = () => {};
   const handleHiddenResult = () => setShowResult(false);
   const handleShowResult = () => setShowResult(true);
 
@@ -59,7 +64,7 @@ function Search() {
                 ref={inputRef}
                 value={searchValue}
                 onFocus={handleShowResult}
-                onChange={(e) => setSearchValue(e.target.value)}
+                onChange={handleChangeInputSearch}
                 placeholder="Search accounts and video"
                 className={clsx('search-input')}
               />
@@ -82,7 +87,7 @@ function Search() {
                 ></i>
               )}
             </div>
-            <button className={clsx('search-btn')}>
+            <button className={clsx('search-btn')} onClick={handleSearchSubmit}>
               <i className="fa-solid fa-magnifying-glass"></i>
             </button>
           </div>

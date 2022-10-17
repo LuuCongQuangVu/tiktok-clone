@@ -10,7 +10,7 @@ import { defaultFn } from '~/utils';
 
 const clsx = classNames.bind(styles);
 
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
   const [history, setHistory] = useState([{ data: items }]);
   const current = history[history.length - 1];
 
@@ -34,13 +34,14 @@ function Menu({ children, items = [], onChange = defaultFn }) {
       delay={[0, 500]}
       interactive
       placement="bottom-end"
+      hideOnClick={hideOnClick}
       onHide={() => setHistory((prev) => prev.slice(0, 1))}
       render={(attrs) => (
         <div className={clsx('content')} tabIndex="-1" {...attrs}>
           <PopperWrapper>
             {history?.length > 1 && <Header title={current?.title} onBack={handleOnBack} />}
 
-            <div className="d-flex flex-column">{renderItems()}</div>
+            <div className={clsx({ 'd-flex': true, 'flex-column': true }, 'content-scroll')}>{renderItems()}</div>
           </PopperWrapper>
         </div>
       )}

@@ -1,9 +1,14 @@
 .content {
   min-width: 224px;
+
+  .content-scroll {
+    overflow: auto;
+  }
 }
 
 .header {
   position: relative;
+  flex-shrink: 0;
   height: 50px;
 }
 .back-btn {

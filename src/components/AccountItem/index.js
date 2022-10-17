@@ -9,7 +9,7 @@ const clsx = classNames.bind(styles);
 
 function AccountItem({ data }) {
   return (
-    <Link to={`/@${data?.username}`} className={clsx('wrapper')}>
+    <Link to={`/@${data?.nickname}`} className={clsx('wrapper')}>
       <Avatar
         size={40}
         src={
@@ -26,7 +26,7 @@ function AccountItem({ data }) {
             </span>
           )}
         </p>
-        <span className={clsx('username')}>{data?.username}</span>
+        <span className={clsx('username')}>{data?.nickname}</span>
       </div>
     </Link>
   );

@@ -6,6 +6,6 @@
 .container {
   margin: auto;
   width: var(--default-layout-width);
-  background-color: green;
   display: flex;
+  margin-top: var(--default-layout-header-height);
 }

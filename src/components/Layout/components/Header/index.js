@@ -1,6 +1,7 @@
 import React from 'react';
 import Tooltip from '@tippyjs/react';
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 
 import styles from './Header.module.scss';
 import images from '~/assets/images';
@@ -8,6 +9,7 @@ import { Menu as PopperMenu } from '~/components/Popper';
 import Button from '~/components/Button';
 import Avatar from '~/components/Avatar';
 import Search from '~/components/Layout/components/Search';
+import routesConfig from '~/config/routes';
 
 const clsx = classNames.bind(styles);
 
@@ -18,6 +20,32 @@ const MENU_ITEMS = [
     children: {
       title: 'Language',
       data: [
+        { code: 'en', text: 'English' },
+        { code: 'vi', text: 'Vietnamese' },
+        { code: 'en', text: 'English' },
+        { code: 'vi', text: 'Vietnamese' },
+        { code: 'en', text: 'English' },
+        { code: 'vi', text: 'Vietnamese' },
+        { code: 'en', text: 'English' },
+        { code: 'vi', text: 'Vietnamese' },
+        { code: 'en', text: 'English' },
+        { code: 'vi', text: 'Vietnamese' },
+        { code: 'en', text: 'English' },
+        { code: 'vi', text: 'Vietnamese' },
+        { code: 'en', text: 'English' },
+        { code: 'vi', text: 'Vietnamese' },
+        { code: 'en', text: 'English' },
+        { code: 'vi', text: 'Vietnamese' },
+        { code: 'en', text: 'English' },
+        { code: 'vi', text: 'Vietnamese' },
+        { code: 'en', text: 'English' },
+        { code: 'vi', text: 'Vietnamese' },
+        { code: 'en', text: 'English' },
+        { code: 'vi', text: 'Vietnamese' },
+        { code: 'en', text: 'English' },
+        { code: 'vi', text: 'Vietnamese' },
+        { code: 'en', text: 'English' },
+        { code: 'vi', text: 'Vietnamese' },
         { code: 'en', text: 'English' },
         { code: 'vi', text: 'Vietnamese' },
       ],
@@ -42,9 +70,11 @@ function Header() {
   return (
     <header className={clsx('wrapper')}>
       <div className={clsx('inner')}>
-        <div className={clsx('logo')}>
-          <img src={images.logo} alt="tiktok" />
-        </div>
+        <Link to={routesConfig.home} className={clsx('logo-link')}>
+          <div className={clsx('logo')}>
+            <img src={images.logo} alt="tiktok" />
+          </div>
+        </Link>
         {/* Search */}
         <Search />
 
