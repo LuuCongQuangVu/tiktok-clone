@@ -8,8 +8,8 @@ import images from '~/assets/images';
 import { Menu as PopperMenu } from '~/components/Popper';
 import Button from '~/components/Button';
 import Avatar from '~/components/Avatar';
-import Search from '~/components/Layout/components/Search';
-import routesConfig from '~/config/routes';
+import Search from '~/layouts/components/Search';
+import config from '~/config';
 
 const clsx = classNames.bind(styles);
 
@@ -70,7 +70,7 @@ function Header() {
   return (
     <header className={clsx('wrapper')}>
       <div className={clsx('inner')}>
-        <Link to={routesConfig.home} className={clsx('logo-link')}>
+        <Link to={config.routes.home} className={clsx('logo-link')}>
           <div className={clsx('logo')}>
             <img src={images.logo} alt="tiktok" />
           </div>

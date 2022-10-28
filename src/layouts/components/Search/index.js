@@ -6,7 +6,7 @@ import styles from './Search.module.scss';
 import AccountItem from '~/components/AccountItem';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { useDebounce } from '~/hooks';
-import { search } from '~/apiServices/searchService';
+import { search } from '~/services/searchService';
 
 const clsx = classNames.bind(styles);
 
