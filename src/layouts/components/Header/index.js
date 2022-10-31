@@ -107,12 +107,7 @@ function Header() {
           <PopperMenu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
             {currentUser ? (
               <div className="d-flex align-items-center justify-content-center">
-                <Avatar
-                  src={
-                    'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/35a961776c60ec6d7b8e42a772712923~c5_720x720.jpeg?x-expires=1665720000&x-signature=c0gJlGeW%2FJWg8WpPOdupDp9pbq0%3D'
-                  }
-                  size={32}
-                />
+                <Avatar size={32} />
               </div>
             ) : (
               <div className={clsx('action-more')}>
